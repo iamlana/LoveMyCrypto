@@ -24,7 +24,11 @@
 .App-link {
   color: rgba(255, 255, 255, .7);
   font-size: 0.2em;
-  font-weight: 300;
+  font-weight: 100;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color:  transparent;
 }
 
 @keyframes App-logo-spin {
