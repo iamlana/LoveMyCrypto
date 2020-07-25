@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Home } from './components/Home'
-import { AllCurrencies } from './components/AllCurrencies'
+import { FavoritesProvider } from './components/useFavorites';
+import { Board } from './components/Board'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,12 +11,14 @@ import {
 
 function App() {
   return (
+    <FavoritesProvider>
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/coins" exact component={AllCurrencies} />
+        <Route path="/coins" exact component={Board} />
       </Switch>
     </Router>
+    </FavoritesProvider>
   );
 }
 

@@ -27,27 +27,58 @@
   border: none;
   outline: none;
   border-radius: 30px;
-  background-color:  transparent;
+  background-color: transparent;
   text-decoration: none;
 }
-.currency_list{
+
+.coins_list {
   background-color: #4599ff;
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
-  font-weight: 100;
+  font-size: 20px;
+  font-weight: 200;
   color: white;
 }
 
-.currency{
+.coins_list-title {
+  grid-column: span 3;
+  text-align: center;
+}
+
+.coins_list-all {
+  grid-column: 1ft;
   font-size: 30px;
-  font-weight: 100;
   color: white;
   list-style: none;
 }
+
+.coins_list-favorite {
+  grid-column: 1ft;
+  font-size: 30px;
+  list-style: none;
+
+}
+
+.coins_list-left {
+  grid-column: 1ft;
+  font-size: 30px;
+  list-style: none;
+}
+
+.favorite {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin: 0 10px;
+  padding: 0;
+  font-size: 20px;
+  outline: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
