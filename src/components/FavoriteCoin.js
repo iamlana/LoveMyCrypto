@@ -1,6 +1,6 @@
 import React from "react"
 import { useFavorites } from "./useFavorites"
-import { AllCoins } from './AllCoins'
+
 
 export function FavoriteCoin() {
 
