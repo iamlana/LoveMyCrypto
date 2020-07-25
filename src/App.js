@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Home } from './components/Home'
 import { FavoritesProvider } from './components/useFavorites';
-import { Board } from './components/Board'
+import { Coins } from './components/Coins'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,12 +12,12 @@ import {
 function App() {
   return (
     <FavoritesProvider>
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/coins" exact component={Board} />
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/coins" exact component={Coins} />
+        </Switch>
+      </Router>
     </FavoritesProvider>
   );
 }
