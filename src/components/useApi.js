@@ -8,29 +8,22 @@ export function useApi(url) {
     return () => clearInterval(timer);
   }, [url]);
 
-
-  const [data, setData] = useState(undefined);
-  const [error, setError] = useState(undefined)
-  const [loading, setLoading] = useState(true)
+  const [state, setState] = useState({ data: undefined, error: undefined, loading: true })
 
   async function fetchData(url) {
     try {
       const result = await fetch(url);
       const data = await result.json();
       if (!result.ok) {
-        setError(data)
+        setState({ data: undefined, error: data, loading: false })
       } else {
-        setData(data)
+        setState({ data, error: undefined, loading: false })
       }
     } catch (error) {
-      setError(error)
+      setState({ data: undefined, error, loading: false })
     }
-    setLoading(false)
   }
 
-  return {
-    data,
-    error,
-    loading
-  }
+  return state
+
 }
