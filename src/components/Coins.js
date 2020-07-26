@@ -19,17 +19,17 @@ export function Coins() {
   const leftCoins = allCoins.filter(coin => !favorites.includes(coin.id))
 
   return (
-
     <div className="coins_list">
-      <p className="coins_list-title">Press ★ to add to Favorite List</p>
-      <ul className="coins_list-favorite">
-        <li>Favorite Coins</li>
-        <ul>{favoriteCoins.map(coin => <Coin key={coin.id} coin={coin} />)}</ul>
-      </ul>
-      <ul>
-        <li className="coins_list-left">Other Coins</li>
+      <p className="coins_list-title">Press ★ to add to the Favorite List</p>
+      <div className="coins_list_left">
+        <p>Coins:</p>
         <ul>{leftCoins.map(coin => <Coin key={coin.id} coin={coin} />)}</ul>
-      </ul>
+      </div>
+      <div className="coins_list_favorite">
+        <p className="title">Favorite Coins:</p>
+        <ul>{favoriteCoins.map(coin => <Coin key={coin.id} coin={coin} />)}</ul>
+      </div>
+
     </div>
   )
 }

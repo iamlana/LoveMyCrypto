@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 
 export function useApi(url) {
   useEffect(() => {
-    fetchData(url);
+    const timer = setInterval(() => {
+      fetchData(url);
+    }, 2000);
+    return () => clearInterval(timer);
   }, [url]);
+
 
   const [data, setData] = useState(undefined);
   const [error, setError] = useState(undefined)
